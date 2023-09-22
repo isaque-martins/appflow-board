@@ -77,6 +77,6 @@ class _AppFlowyGroupHeaderState extends State<AppFlowyGroupHeader> {
   }
 
   Widget _hSpace() {
-    return const SizedBox(width: 6);
+    return const Spacer();
   }
 }

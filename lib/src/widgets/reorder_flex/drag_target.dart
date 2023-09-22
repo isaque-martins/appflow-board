@@ -3,6 +3,7 @@ import 'package:appflowy_board/src/utils/log.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
+
 import '../transitions.dart';
 
 abstract class DragTargetData {
@@ -185,16 +186,9 @@ class _ReorderDragTargetState<T extends DragTargetData>
             );
           },
           dragAnchorStrategy: childDragAnchorStrategy,
-
-          /// When the drag ends inside a DragTarget widget, the drag
-          /// succeeds, and we reorder the widget into position appropriately.
           onDragCompleted: () {
             widget.onDragEnded(widget.dragTargetData);
           },
-
-          /// When the drag does not end inside a DragTarget widget, the
-          /// drag fails, but we still reorder the widget to the last position it
-          /// had been dragged to.
           onDraggableCanceled: (Velocity velocity, Offset offset) {
             widget.onDragEnded(widget.dragTargetData);
           },

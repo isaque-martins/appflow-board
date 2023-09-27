@@ -167,8 +167,16 @@ class AppFlowyGroupController extends ChangeNotifier with EquatableMixin {
   }
 
   bool _containsItem(AppFlowyGroupItem item) {
-    return groupData._items.indexWhere((element) => element.id == item.id) !=
-        -1;
+    return groupData._items.indexWhere((element) => element.id == item.id) != -1;
+  }
+
+  void setDraggability(bool groupDragging, itemDragging) {
+    groupData.draggable = groupDragging;
+
+    for (var item in groupData._items) {
+      item.draggable = itemDragging;
+    }
+    _notify();
   }
 
   void enableDragging(bool isEnable) {

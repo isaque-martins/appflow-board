@@ -592,8 +592,8 @@ class ReorderFlexState extends State<ReorderFlex> with ReorderFlexMixin, TickerP
             interactive: true,
             controller: _scrollController,
             radius: const Radius.circular(4),
-            trackVisibility: true,
-            thumbVisibility: true,
+            // trackVisibility: true,
+            //thumbVisibility: true,
             child: SingleChildScrollView(
               scrollDirection: widget.config.direction,
               controller: _scrollController,

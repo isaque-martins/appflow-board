@@ -2,11 +2,12 @@ import 'dart:collection';
 
 import 'package:appflowy_board/src/widgets/reorder_flex/drag_state.dart';
 import 'package:flutter/material.dart';
+
 import '../../rendering/board_overlay.dart';
 import '../../utils/log.dart';
-import '../reorder_phantom/phantom_controller.dart';
-import '../reorder_flex/reorder_flex.dart';
 import '../reorder_flex/drag_target_interceptor.dart';
+import '../reorder_flex/reorder_flex.dart';
+import '../reorder_phantom/phantom_controller.dart';
 import 'group_data.dart';
 
 typedef OnGroupDragStarted = void Function(int index);

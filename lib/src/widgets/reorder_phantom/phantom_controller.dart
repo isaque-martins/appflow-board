@@ -31,6 +31,8 @@ abstract class BoardPhantomControllerDelegate {
     String fromGroupId,
     int fromGroupIndex,
     String toGroupId,
+    String toGroupName,
+    String taskId,
     int toGroupIndex,
   );
 }
@@ -75,7 +77,7 @@ class BoardPhantomController extends OverlapDragTargetDelegate
   }
 
   /// Remove the phantom in the group when the group is end dragging.
-  void groupEndDragging(String groupId) {
+  void groupEndDragging(String groupId, String groupName) {
     phantomState.setGroupIsDragging(groupId, false);
     if (phantomRecord == null) return;
 
@@ -90,6 +92,8 @@ class BoardPhantomController extends OverlapDragTargetDelegate
         fromGroupId,
         phantomRecord!.fromGroupIndex,
         toGroupId,
+        groupName,
+        phantomRecord!.taskId,
         phantomRecord!.toGroupIndex,
       );
 
@@ -148,6 +152,7 @@ class BoardPhantomController extends OverlapDragTargetDelegate
       toGroupId: groupId,
       toGroupIndex: dragTargetIndex,
       fromGroupId: dragTargetData.reorderFlexId,
+      taskId: dragTargetData.reorderFlexItem.id,
       fromGroupIndex: dragTargetData.draggingIndex,
     );
     Log.debug('[$BoardPhantomController] will move: $phantomRecord');
@@ -243,12 +248,14 @@ class PhantomRecord {
   int fromGroupIndex;
 
   final String toGroupId;
+  final String taskId;
   int toGroupIndex;
 
   PhantomRecord({
     required this.toGroupId,
     required this.toGroupIndex,
     required this.fromGroupId,
+    required this.taskId,
     required this.fromGroupIndex,
   });
 

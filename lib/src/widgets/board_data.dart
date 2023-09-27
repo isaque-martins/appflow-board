@@ -25,6 +25,8 @@ typedef OnMoveGroupItemToGroup = void Function(
   String fromGroupId,
   int fromIndex,
   String toGroupId,
+  String groupName,
+  String taskId,
   int toIndex,
 );
 
@@ -229,6 +231,8 @@ class AppFlowyBoardController extends ChangeNotifier
     String fromGroupId,
     int fromGroupIndex,
     String toGroupId,
+    String toGroupName,
+    String taskId,
     int toGroupIndex,
   ) {
     final fromGroupController = getGroupController(fromGroupId)!;
@@ -244,6 +248,8 @@ class AppFlowyBoardController extends ChangeNotifier
         fromGroupId,
         fromGroupIndex,
         toGroupId,
+        toGroupName,
+        taskId,
         toGroupIndex,
       );
     }

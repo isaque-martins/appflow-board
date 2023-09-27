@@ -10,16 +10,16 @@ class MultiBoardListExample extends StatefulWidget {
 
 class _MultiBoardListExampleState extends State<MultiBoardListExample> {
   final AppFlowyBoardController controller = AppFlowyBoardController(
-    onMoveGroup: (fromGroupId, fromIndex, toGroupId, toIndex) {
-      debugPrint('Move item from $fromIndex to $toIndex');
-    },
-    onMoveGroupItem: (groupId, fromIndex, toIndex) {
-      debugPrint('Move $groupId:$fromIndex to $groupId:$toIndex');
-    },
-    onMoveGroupItemToGroup: (fromGroupId, fromIndex, toGroupId, toIndex) {
-      debugPrint('Move $fromGroupId:$fromIndex to $toGroupId:$toIndex');
-    },
-  );
+      // onMoveGroup: (fromGroupId, fromIndex, toGroupId, toIndex) {
+      //   debugPrint('Move item from $fromIndex to $toIndex');
+      // },
+      // onMoveGroupItem: (groupId, fromIndex, toIndex) {
+      //   debugPrint('Move $groupId:$fromIndex to $groupId:$toIndex');
+      // },
+      // onMoveGroupItemToGroup: (fromGroupId, fromIndex, toGroupId, toIndex) {
+      //   debugPrint('Move $fromGroupId:$fromIndex to $toGroupId:$toIndex');
+      // },
+      );
 
   late AppFlowyBoardScrollController boardController;
 

@@ -75,6 +75,7 @@ class AppFlowyBoardGroup extends StatefulWidget {
 
   String get groupId => dataSource.groupData.id;
 
+  String get groupName => dataSource.groupData.headerData.groupName;
   final AppFlowyBoardCardBuilder cardBuilder;
 
   final AppFlowyBoardHeaderBuilder? headerBuilder;
@@ -166,7 +167,7 @@ class _AppFlowyBoardGroupState extends State<AppFlowyBoardGroup> {
             }
           }),
           onDragEnded: () {
-            widget.phantomController.groupEndDragging(widget.groupId);
+            widget.phantomController.groupEndDragging(widget.groupId, widget.groupName);
             widget.onDragEnded?.call(widget.groupId);
             widget.dataSource.debugPrint();
           },

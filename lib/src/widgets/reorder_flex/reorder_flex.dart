@@ -198,7 +198,7 @@ class ReorderFlexState extends State<ReorderFlex> with ReorderFlexMixin, TickerP
     _scrollController = widget.scrollController ?? PrimaryScrollController.maybeOf(context) ?? ScrollController();
 
     if (_scrollController.hasClients) {
-      _attachedScrollPosition = Scrollable.of(context)?.position;
+      _attachedScrollPosition = Scrollable.of(context).position;
     } else {
       _attachedScrollPosition = null;
     }

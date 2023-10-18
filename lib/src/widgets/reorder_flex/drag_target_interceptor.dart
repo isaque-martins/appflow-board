@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:appflowy_board/src/widgets/board.dart';
 import 'package:flutter/material.dart';
+
 import '../../utils/log.dart';
 import 'drag_state.dart';
 import 'drag_target.dart';

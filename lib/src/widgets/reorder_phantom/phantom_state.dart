@@ -1,7 +1,7 @@
 import 'package:appflowy_board/src/utils/log.dart';
+import 'package:flutter/material.dart';
 
 import 'phantom_controller.dart';
-import 'package:flutter/material.dart';
 
 class GroupPhantomState {
   final _groupStates = <String, GroupState>{};

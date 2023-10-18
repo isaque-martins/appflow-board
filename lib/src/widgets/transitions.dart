@@ -1,5 +1,5 @@
-import 'package:flutter/widgets.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 
 class SizeTransitionWithIntrinsicSize extends SingleChildRenderObjectWidget {
   /// Creates a size transition with its intrinsic width/height taking [sizeFactor]

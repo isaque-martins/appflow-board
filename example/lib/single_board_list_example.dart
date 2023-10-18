@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:appflowy_board/appflowy_board.dart';
+import 'package:flutter/material.dart';
 
 class SingleBoardListExample extends StatefulWidget {
   const SingleBoardListExample({Key? key}) : super(key: key);

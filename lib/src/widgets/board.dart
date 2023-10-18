@@ -1,6 +1,8 @@
 import 'package:appflowy_board/src/utils/log.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../rendering/board_overlay.dart';
 import 'board_data.dart';
 import 'board_group/group.dart';
 import 'board_group/group_data.dart';
@@ -8,7 +10,6 @@ import 'reorder_flex/drag_state.dart';
 import 'reorder_flex/drag_target_interceptor.dart';
 import 'reorder_flex/reorder_flex.dart';
 import 'reorder_phantom/phantom_controller.dart';
-import '../rendering/board_overlay.dart';
 
 class AppFlowyBoardScrollController {
   AppFlowyBoardState? _boardState;

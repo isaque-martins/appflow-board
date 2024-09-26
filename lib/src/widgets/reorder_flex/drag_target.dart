@@ -119,21 +119,19 @@ class _ReorderDragTargetState<T extends DragTargetData>
   Widget build(BuildContext context) {
     Widget dragTarget = DragTarget<T>(
       builder: _buildDraggableWidget,
-      onWillAccept: (dragTargetData) {
-        if (dragTargetData == null) {
-          return false;
-        }
-
-        return widget.onWillAccept(dragTargetData);
+      onWillAcceptWithDetails: (dragTargetData) {
+        return widget.onWillAccept(dragTargetData.data); // Pass the actual data
       },
-      onAccept: widget.onAccept,
+      onAcceptWithDetails: (dragTargetDetails) {
+        widget.onAccept!(dragTargetDetails.data); // Pass only the data, not the entire details object
+      },
       onMove: (detail) {
-        widget.onDragMoved(detail.data, detail.offset);
+        widget.onDragMoved(detail.data, detail.offset); // This looks fine since you are using both data and offset
       },
       onLeave: (dragTargetData) {
         assert(dragTargetData != null);
         if (dragTargetData != null) {
-          widget.onLeave?.call(dragTargetData);
+          widget.onLeave?.call(dragTargetData); // Pass only the data, not the entire details object
         }
       },
     );

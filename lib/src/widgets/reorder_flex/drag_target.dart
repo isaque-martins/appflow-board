@@ -135,7 +135,7 @@ class _ReorderDragTargetState<T extends DragTargetData>
         }
       },
     );
-    //Teste2
+    //Teste3
 
     dragTarget = KeyedSubtree(key: widget.indexGlobalKey, child: dragTarget);
     return dragTarget;
